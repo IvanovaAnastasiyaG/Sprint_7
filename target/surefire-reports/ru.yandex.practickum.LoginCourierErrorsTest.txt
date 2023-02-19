@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: ru.yandex.practickum.LoginCourierErrorsTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 126.687 s <<< FAILURE! - in ru.yandex.practickum.LoginCourierErrorsTest
+loginCourierNotPasswordNotEnoughDataMessage[2](ru.yandex.practickum.LoginCourierErrorsTest)  Time elapsed: 60.713 s  <<< ERROR!
+java.lang.IllegalStateException: 
+Cannot invoke the path method because no content-type was present in the response and no default parser has been set.
+
+You can specify a default parser using e.g.:
+RestAssured.defaultParser = Parser.JSON;
+
+	at ru.yandex.practickum.LoginCourierErrorsTest.loginCourierNotPasswordNotEnoughDataMessage(LoginCourierErrorsTest.java:53)
+
+loginCourierNotPasswordStatusCode[2](ru.yandex.practickum.LoginCourierErrorsTest)  Time elapsed: 61.906 s  <<< FAILURE!
+java.lang.AssertionError: 
+Status code error
+Expected: <400>
+     but: was <504>
+	at ru.yandex.practickum.LoginCourierErrorsTest.loginCourierNotPasswordStatusCode(LoginCourierErrorsTest.java:49)
+
