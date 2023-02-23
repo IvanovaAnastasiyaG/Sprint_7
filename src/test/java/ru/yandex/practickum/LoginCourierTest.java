@@ -1,5 +1,6 @@
 package ru.yandex.practickum;
 
+import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.junit.*;
 import client.CourierApiClient;
@@ -19,16 +20,12 @@ public class LoginCourierTest {
     }
 
     @Test
-    public void loginCourierStatusCode200() {
+    public void loginCourierStatusCode200AndReturnId() {
         Courier courier = new Courier("courier-test", "1234");
-        int status = courierApiClient.getCourier(courier).extract().statusCode();
+        ValidatableResponse response = courierApiClient.getCourier(courier);
+        int status = response.extract().statusCode();
         assertThat("Status code is 200", status, equalTo(HttpStatus.SC_OK));
-    }
-
-    @Test
-    public void loginCourierReturnId() {
-        Courier courier = new Courier("courier-test", "1234");
-        String courierId = courierApiClient.getCourier(courier).extract().path("id").toString();
+        String courierId = response.extract().path("id").toString();
         assertThat("Return id", courierId, notNullValue());
     }
 

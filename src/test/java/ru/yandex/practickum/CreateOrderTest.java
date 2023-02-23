@@ -46,21 +46,13 @@ public class CreateOrderTest {
     }
 
     @Test
-    public void createOrderDifferentColor() {
+    public void createOrderDifferentColorAndReturnTrack() {
         order.setColor(Arrays.asList(colors));
         ValidatableResponse response = orderApiClient.createOrder(order);
         int status = response.extract().statusCode();
         int track = response.extract().path("track");
         orderApiClient.deleteOrder(track);
         assertThat("Status code is 201", status, equalTo(HttpStatus.SC_CREATED));
-    }
-
-    @Test
-    public void createOrderReturnTrack() {
-        order.setColor(Arrays.asList(colors));
-        ValidatableResponse response = orderApiClient.createOrder(order);
-        int track = response.extract().path("track");
-        orderApiClient.deleteOrder(track);
         assertThat("Courier's id is exist", track, notNullValue());
     }
 

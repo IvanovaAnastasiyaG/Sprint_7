@@ -1,6 +1,7 @@
 package ru.yandex.practickum;
 
 import client.CourierApiClient;
+import io.restassured.response.ValidatableResponse;
 import model.Courier;
 import org.apache.http.HttpStatus;
 import org.junit.After;
@@ -44,14 +45,11 @@ public class LoginCourierErrorsTest {
     }
 
     @Test
-    public void loginCourierNotPasswordStatusCode() {
-        int status = courierApiClient.getCourier(courier).extract().statusCode();
+    public void loginCourierNotPasswordStatusCodeAndErrorMessage() {
+        ValidatableResponse response = courierApiClient.getCourier(courier);
+        int status = response.extract().statusCode();
         assertThat("Status code error", status, equalTo(statusCodeExpected));
-    }
-
-    @Test
-    public void loginCourierNotPasswordNotEnoughDataMessage() {
-        String message = courierApiClient.getCourier(courier).extract().path("message");
+        String message = response.extract().path("message");
         assertThat("Message error is NotEnoughData", message, equalTo(messageExpected));
     }
 

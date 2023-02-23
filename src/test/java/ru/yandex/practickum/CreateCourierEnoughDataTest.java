@@ -1,5 +1,6 @@
 package ru.yandex.practickum;
 
+import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -34,14 +35,11 @@ public class CreateCourierEnoughDataTest {
     }
 
     @Test
-    public void createCourierErrorStatusCode() {
-        int status = courierApiClient.createCourier(courier).extract().statusCode();
+    public void createCourierErrorNotEnoughData() {
+        ValidatableResponse response = courierApiClient.createCourier(courier);
+        int status = response.extract().statusCode();
         assertThat("Status code is 400", status, equalTo(HttpStatus.SC_BAD_REQUEST));
-    }
-
-    @Test
-    public void createCourierErrorText() {
-        String message = courierApiClient.createCourier(courier).extract().path("message");
+        String message = response.extract().path("message");
         assertThat("Message error is NotEnoughData", message, equalTo(CREATE_COURIER_NOT_ENOUGH_DATA));
     }
 

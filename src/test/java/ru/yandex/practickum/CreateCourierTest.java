@@ -1,5 +1,6 @@
 package ru.yandex.practickum;
 
+import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -32,34 +33,29 @@ public class CreateCourierTest {
 
     @Test
     public void createNewCourierIsCreate() {
-        courierApiClient.createCourier(courier);
+        ValidatableResponse response = courierApiClient.createCourier(courier);
+        int status = response.extract().statusCode();
+        assertThat("Status code is 201", status, equalTo(HttpStatus.SC_CREATED));
         String courierId = courierApiClient.getCourier(courier).extract().path("id").toString();
         assertThat("Courier's id is exist", courierId, notNullValue());
     }
 
     @Test
-    public void createNewCourierStatusCode201() {
-        int status = courierApiClient.createCourier(courier).extract().statusCode();
-        assertThat("Status code is 201", status, equalTo(HttpStatus.SC_CREATED));
-    }
-
-    @Test
     public void createNewCourierReturnOk() {
-        boolean ok = courierApiClient.createCourier(courier).extract().path("ok");
+        ValidatableResponse response = courierApiClient.createCourier(courier);
+        int status = response.extract().statusCode();
+        assertThat("Status code is 201", status, equalTo(HttpStatus.SC_CREATED));
+        boolean ok = response.extract().path("ok");
         assertThat("Success request is ok", ok, equalTo(true));
-    }
-
-    @Test
-    public void createExistCourierStatusCode409() {
-        courierApiClient.createCourier(courier);
-        int status = courierApiClient.createCourier(courier).extract().statusCode();
-        assertThat("Status code is 409", status, equalTo(HttpStatus.SC_CONFLICT));
     }
 
     @Test
     public void createExistCourierRequiredFieldsReturnIsExist() {
         courierApiClient.createCourier(courier);
-        String message = courierApiClient.createCourier(courier).extract().path("message");
+        ValidatableResponse response = courierApiClient.createCourier(courier);
+        int status = response.extract().statusCode();
+        assertThat("Status code is 409", status, equalTo(HttpStatus.SC_CONFLICT));
+        String message = response.extract().path("message");
         assertThat("Message error is login already in use", message, equalTo(CREATE_COURIER_LOGIN_ALREADY_USE));
     }
 
