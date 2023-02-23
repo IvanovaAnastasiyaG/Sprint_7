@@ -17,19 +17,19 @@ public class CreateCourierEnoughDataTest {
     Courier courier;
     CourierApiClient courierApiClient = new CourierApiClient();
 
-    public CreateCourierEnoughDataTest(Courier courier){
+    public CreateCourierEnoughDataTest(Courier courier) {
         this.courier = courier;
     }
 
     @Parameterized.Parameters
     public static Object[][] getCreateCourierDate() {
-        return new Object[][] {
-                { new Courier("courier-test", null)},
-                { new Courier(null, "1234")},
-                { new Courier(null, null, "Jack")},
-                { new Courier(null, null)},
-                { new Courier("courier-test", null, "Jack")},
-                { new Courier(null, "1234", "Jack") },
+        return new Object[][]{
+                {new Courier("courier-test", null)},
+                {new Courier(null, "1234")},
+                {new Courier(null, null, "Jack")},
+                {new Courier(null, null)},
+                {new Courier("courier-test", null, "Jack")},
+                {new Courier(null, "1234", "Jack")},
         };
     }
 

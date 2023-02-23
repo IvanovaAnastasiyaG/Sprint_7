@@ -18,53 +18,53 @@ public class CreateCourierTest {
 
     CourierApiClient courierApiClient = new CourierApiClient();
 
-    public CreateCourierTest(Courier courier){
+    public CreateCourierTest(Courier courier) {
         this.courier = courier;
     }
 
     @Parameterized.Parameters
     public static Object[][] getCreateCourierDate() {
-        return new Object[][] {
-                { new Courier("courier-test", "1234", "Jack")},
-                { new Courier("courier-test", "1234", null)},
+        return new Object[][]{
+                {new Courier("courier-test", "1234", "Jack")},
+                {new Courier("courier-test", "1234", null)},
         };
     }
 
     @Test
-    public void createNewCourierIsCreate(){
+    public void createNewCourierIsCreate() {
         courierApiClient.createCourier(courier);
         String courierId = courierApiClient.getCourier(courier).extract().path("id").toString();
         assertThat("Courier's id is exist", courierId, notNullValue());
     }
 
     @Test
-    public void createNewCourierStatusCode201(){
+    public void createNewCourierStatusCode201() {
         int status = courierApiClient.createCourier(courier).extract().statusCode();
         assertThat("Status code is 201", status, equalTo(HttpStatus.SC_CREATED));
     }
 
     @Test
-    public void createNewCourierReturnOk(){
+    public void createNewCourierReturnOk() {
         boolean ok = courierApiClient.createCourier(courier).extract().path("ok");
         assertThat("Success request is ok", ok, equalTo(true));
     }
 
     @Test
-    public void createExistCourierStatusCode409(){
+    public void createExistCourierStatusCode409() {
         courierApiClient.createCourier(courier);
         int status = courierApiClient.createCourier(courier).extract().statusCode();
         assertThat("Status code is 409", status, equalTo(HttpStatus.SC_CONFLICT));
     }
 
     @Test
-    public void createExistCourierRequiredFieldsReturnIsExist(){
+    public void createExistCourierRequiredFieldsReturnIsExist() {
         courierApiClient.createCourier(courier);
         String message = courierApiClient.createCourier(courier).extract().path("message");
         assertThat("Message error is login already in use", message, equalTo(CREATE_COURIER_LOGIN_ALREADY_USE));
     }
 
     @After
-    public void deleteCourier(){
+    public void deleteCourier() {
         int id = courierApiClient.getCourier(courier).extract().path("id");
         courierApiClient.deleteCourier(String.valueOf(id));
     }

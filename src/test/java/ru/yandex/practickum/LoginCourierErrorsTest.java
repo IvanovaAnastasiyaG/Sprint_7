@@ -29,33 +29,34 @@ public class LoginCourierErrorsTest {
     }
 
     @Before
-    public void createCourier(){
+    public void createCourier() {
         courierApiClient.createCourier(courierNew);
     }
 
     @Parameterized.Parameters
     public static Object[][] getCreateCourierDate() {
-        return new Object[][] {
-                { new Courier("courierTest", "1234"), HttpStatus.SC_NOT_FOUND, LOGIN_COURIER_ACCOUNT_NOT_FOUND},
-                { new Courier("courier-test", "2345"), HttpStatus.SC_NOT_FOUND, LOGIN_COURIER_ACCOUNT_NOT_FOUND},
-                { new Courier("courier-test", null), HttpStatus.SC_BAD_REQUEST, LOGIN_COURIER_NOT_ENOUGH_DATA},
-                { new Courier(null, "1234"), HttpStatus.SC_BAD_REQUEST, LOGIN_COURIER_NOT_ENOUGH_DATA},
+        return new Object[][]{
+                {new Courier("courierTest", "1234"), HttpStatus.SC_NOT_FOUND, LOGIN_COURIER_ACCOUNT_NOT_FOUND},
+                {new Courier("courier-test", "2345"), HttpStatus.SC_NOT_FOUND, LOGIN_COURIER_ACCOUNT_NOT_FOUND},
+                {new Courier("courier-test", null), HttpStatus.SC_BAD_REQUEST, LOGIN_COURIER_NOT_ENOUGH_DATA},
+                {new Courier(null, "1234"), HttpStatus.SC_BAD_REQUEST, LOGIN_COURIER_NOT_ENOUGH_DATA},
         };
     }
 
     @Test
-    public void loginCourierNotPasswordStatusCode(){
+    public void loginCourierNotPasswordStatusCode() {
         int status = courierApiClient.getCourier(courier).extract().statusCode();
         assertThat("Status code error", status, equalTo(statusCodeExpected));
     }
+
     @Test
-    public void loginCourierNotPasswordNotEnoughDataMessage(){
+    public void loginCourierNotPasswordNotEnoughDataMessage() {
         String message = courierApiClient.getCourier(courier).extract().path("message");
         assertThat("Message error is NotEnoughData", message, equalTo(messageExpected));
     }
 
     @After
-    public void deleteCourier(){
+    public void deleteCourier() {
         int id = courierApiClient.getCourier(courierNew).extract().path("id");
         courierApiClient.deleteCourier(String.valueOf(id));
     }

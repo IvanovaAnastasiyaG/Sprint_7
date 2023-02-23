@@ -15,7 +15,7 @@ public class GetOrdersTest {
     OrderApiClient orderApiClient = new OrderApiClient();
 
     @Test
-    public void getOrdersReturnOrdersList(){
+    public void getOrdersReturnOrdersList() {
         boolean isListOrders = true;
         List<Order> orders = orderApiClient.getOrders();
         if (orders == null) {

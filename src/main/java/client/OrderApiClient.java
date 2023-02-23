@@ -5,7 +5,7 @@ import model.Order;
 
 import java.util.List;
 
-public class OrderApiClient extends BaseHttpClient{
+public class OrderApiClient extends BaseHttpClient {
 
     private final String endPointCreate = "/api/v1/orders";
     private final String endPointGetOrders = "/api/v1/orders";

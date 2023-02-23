@@ -21,14 +21,14 @@ import static org.hamcrest.Matchers.notNullValue;
 public class CreateOrderTest {
     OrderApiClient orderApiClient = new OrderApiClient();
     Order order = new Order(
-                "Naruto",
-                        "Uchiha",
-                        "Konoha, 142 apt.",
-                        "4",
-                        "+7 800 355 35 35",
-                        5,
-                        "2020-06-06",
-                        "Saske, come back to Konoha");
+            "Naruto",
+            "Uchiha",
+            "Konoha, 142 apt.",
+            "4",
+            "+7 800 355 35 35",
+            5,
+            "2020-06-06",
+            "Saske, come back to Konoha");
     Color[] colors;
 
     public CreateOrderTest(Color[] colors) {
@@ -37,7 +37,7 @@ public class CreateOrderTest {
 
     @Parameterized.Parameters
     public static Color[][][] setData() {
-        return new Color[][][] {
+        return new Color[][][]{
                 {{Color.BLACK}},
                 {{Color.GREY}},
                 {{Color.BLACK, Color.GREY}},
@@ -46,7 +46,7 @@ public class CreateOrderTest {
     }
 
     @Test
-    public void createOrderDifferentColor(){
+    public void createOrderDifferentColor() {
         order.setColor(Arrays.asList(colors));
         ValidatableResponse response = orderApiClient.createOrder(order);
         int status = response.extract().statusCode();
@@ -56,7 +56,7 @@ public class CreateOrderTest {
     }
 
     @Test
-    public void createOrderReturnTrack(){
+    public void createOrderReturnTrack() {
         order.setColor(Arrays.asList(colors));
         ValidatableResponse response = orderApiClient.createOrder(order);
         int track = response.extract().path("track");
