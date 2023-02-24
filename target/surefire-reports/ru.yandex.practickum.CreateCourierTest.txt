@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: ru.yandex.practickum.CreateCourierTest
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 6.095 s <<< FAILURE! - in ru.yandex.practickum.CreateCourierTest
-createExistCourierRequiredFieldsReturnIsExist[0](ru.yandex.practickum.CreateCourierTest)  Time elapsed: 0.73 s  <<< FAILURE!
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 4.173 s <<< FAILURE! - in ru.yandex.practickum.CreateCourierTest
+createExistCourierRequiredFieldsReturnIsExist[Создание курьера. Тестовые данные: model.Courier@656672fb](ru.yandex.practickum.CreateCourierTest)  Time elapsed: 0.708 s  <<< FAILURE!
 java.lang.AssertionError: 
 Message error is login already in use
 Expected: "Этот логин уже используется"
      but: was "Этот логин уже используется. Попробуйте другой."
 	at ru.yandex.practickum.CreateCourierTest.createExistCourierRequiredFieldsReturnIsExist(CreateCourierTest.java:63)
 
-createExistCourierRequiredFieldsReturnIsExist[1](ru.yandex.practickum.CreateCourierTest)  Time elapsed: 0.667 s  <<< FAILURE!
+createExistCourierRequiredFieldsReturnIsExist[Создание курьера. Тестовые данные: model.Courier@75df4b1d](ru.yandex.practickum.CreateCourierTest)  Time elapsed: 0.642 s  <<< FAILURE!
 java.lang.AssertionError: 
 Message error is login already in use
 Expected: "Этот логин уже используется"

@@ -5,6 +5,7 @@ import org.apache.http.HttpStatus;
 import org.junit.*;
 import client.CourierApiClient;
 import model.Courier;
+import io.qameta.allure.junit4.DisplayName;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -20,6 +21,7 @@ public class LoginCourierTest {
     }
 
     @Test
+    @DisplayName("Авторизация существующего пользователя")
     public void loginCourierStatusCode200AndReturnId() {
         Courier courier = new Courier("courier-test", "1234");
         ValidatableResponse response = courierApiClient.getCourier(courier);

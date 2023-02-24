@@ -1,5 +1,6 @@
 package ru.yandex.practickum;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import client.OrderApiClient;
 import model.Order;
@@ -11,10 +12,10 @@ import static org.hamcrest.Matchers.equalTo;
 
 
 public class GetOrdersTest {
-
     OrderApiClient orderApiClient = new OrderApiClient();
 
     @Test
+    @DisplayName("Получение полного списка заказов")
     public void getOrdersReturnOrdersList() {
         boolean isListOrders = true;
         List<Order> orders = orderApiClient.getOrders();

@@ -1,6 +1,7 @@
 package ru.yandex.practickum;
 
 import client.CourierApiClient;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import model.Courier;
 import org.apache.http.HttpStatus;
@@ -34,7 +35,7 @@ public class LoginCourierErrorsTest {
         courierApiClient.createCourier(courierNew);
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Авторизация пользователя. Тестовые данные: {0} {1}")
     public static Object[][] getCreateCourierDate() {
         return new Object[][]{
                 {new Courier("courierTest", "1234"), HttpStatus.SC_NOT_FOUND, LOGIN_COURIER_ACCOUNT_NOT_FOUND},
@@ -45,7 +46,8 @@ public class LoginCourierErrorsTest {
     }
 
     @Test
-    public void loginCourierNotPasswordStatusCodeAndErrorMessage() {
+    @DisplayName("Авторизация с некорректными данными")
+    public void loginCourierStatusCodeAndErrorMessage() {
         ValidatableResponse response = courierApiClient.getCourier(courier);
         int status = response.extract().statusCode();
         assertThat("Status code error", status, equalTo(statusCodeExpected));

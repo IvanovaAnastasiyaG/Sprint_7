@@ -1,5 +1,6 @@
 package ru.yandex.practickum;
 
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.junit.*;
@@ -23,7 +24,7 @@ public class CreateCourierTest {
         this.courier = courier;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Создание курьера. Тестовые данные: {0}")
     public static Object[][] getCreateCourierDate() {
         return new Object[][]{
                 {new Courier("courier-test", "1234", "Jack")},
@@ -32,6 +33,7 @@ public class CreateCourierTest {
     }
 
     @Test
+    @DisplayName("Создание курьера. Код 201. Id существует")
     public void createNewCourierIsCreate() {
         ValidatableResponse response = courierApiClient.createCourier(courier);
         int status = response.extract().statusCode();
@@ -41,6 +43,7 @@ public class CreateCourierTest {
     }
 
     @Test
+    @DisplayName("Создание курьера. Код 201. Возвращено Ок")
     public void createNewCourierReturnOk() {
         ValidatableResponse response = courierApiClient.createCourier(courier);
         int status = response.extract().statusCode();
@@ -50,6 +53,7 @@ public class CreateCourierTest {
     }
 
     @Test
+    @DisplayName("Создание существующего пользователя. Код 409. Сообщение \"Логин уже существует\"")
     public void createExistCourierRequiredFieldsReturnIsExist() {
         courierApiClient.createCourier(courier);
         ValidatableResponse response = courierApiClient.createCourier(courier);

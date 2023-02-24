@@ -1,5 +1,6 @@
 package ru.yandex.practickum;
 
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.junit.After;
@@ -35,7 +36,7 @@ public class CreateOrderTest {
         this.colors = colors;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Создание заказа. Тестовые данные: {0}")
     public static Color[][][] setData() {
         return new Color[][][]{
                 {{Color.BLACK}},
@@ -46,6 +47,7 @@ public class CreateOrderTest {
     }
 
     @Test
+    @DisplayName("Создание заказа. Код 201. Возращен трек-номер")
     public void createOrderDifferentColorAndReturnTrack() {
         order.setColor(Arrays.asList(colors));
         ValidatableResponse response = orderApiClient.createOrder(order);
