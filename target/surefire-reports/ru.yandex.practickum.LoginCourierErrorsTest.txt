@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: ru.yandex.practickum.LoginCourierErrorsTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 62.603 s <<< FAILURE! - in ru.yandex.practickum.LoginCourierErrorsTest
+loginCourierStatusCodeAndErrorMessage[Авторизация пользователя. Тестовые данные: model.Courier@77d7d2d0 400](ru.yandex.practickum.LoginCourierErrorsTest)  Time elapsed: 60.69 s  <<< FAILURE!
+java.lang.AssertionError: 
+Status code error
+Expected: <400>
+     but: was <504>
+	at ru.yandex.practickum.LoginCourierErrorsTest.loginCourierStatusCodeAndErrorMessage(LoginCourierErrorsTest.java:52)
+

@@ -3,3 +3,7 @@
 
 # игнорировать target
 target/
+
+# игнорировать плагин .allure
+.allure/
+
