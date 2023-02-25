@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ru.yandex.practickum.CreateOrderTest" time="1.327" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ru.yandex.practickum.CreateOrderTest" time="1.234" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk11.0.17_8\bin"/>
-    <property name="sun.java.command" value="C:\Users\ANASTA~1.IVA\AppData\Local\Temp\surefire3082058785361202478\surefirebooter10081625948976932440.jar C:\Users\Anastasiya.Ivanova\AppData\Local\Temp\surefire3082058785361202478 2023-02-24T20-38-01_260-jvmRun1 surefire1933110978765385907tmp surefire_03719188616997816716tmp"/>
+    <property name="sun.java.command" value="C:\Users\ANASTA~1.IVA\AppData\Local\Temp\surefire5212061697061421375\surefirebooter5757918049602356952.jar C:\Users\Anastasiya.Ivanova\AppData\Local\Temp\surefire5212061697061421375 2023-02-24T21-11-21_465-jvmRun1 surefire1920146821117902875tmp surefire_015858914780151886538tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Anastasiya.Ivanova\projects\Sprint_7\target\test-classes;C:\Users\Anastasiya.Ivanova\projects\Sprint_7\target\classes;C:\Users\Anastasiya.Ivanova\.m2\repository\org\slf4j\slf4j-simple\1.7.24\slf4j-simple-1.7.24.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\slf4j\slf4j-api\1.7.24\slf4j-api-1.7.24.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\rest-assured\rest-assured\5.0.0\rest-assured-5.0.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\apache\groovy\groovy\4.0.1\groovy-4.0.1.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\apache\groovy\groovy-xml\4.0.1\groovy-xml-4.0.1.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\rest-assured\json-path\5.0.0\json-path-5.0.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\apache\groovy\groovy-json\4.0.1\groovy-json-4.0.1.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\rest-assured\rest-assured-common\5.0.0\rest-assured-common-5.0.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\rest-assured\xml-path\5.0.0\xml-path-5.0.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\com\google\code\gson\gson\2.9.0\gson-2.9.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\qameta\allure\allure-junit4\2.15.0\allure-junit4-2.15.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\qameta\allure\allure-java-commons\2.15.0\allure-java-commons-2.15.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\qameta\allure\allure-model\2.15.0\allure-model-2.15.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\qameta\allure\allure-rest-assured\2.15.0\allure-rest-assured-2.15.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\io\qameta\allure\allure-attachments\2.15.0\allure-attachments-2.15.0.jar;C:\Users\Anastasiya.Ivanova\.m2\repository\org\freemarker\freemarker\2.3.31\freemarker-2.3.31.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\ANASTA~1.IVA\AppData\Local\Temp\surefire3082058785361202478\surefirebooter10081625948976932440.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ANASTA~1.IVA\AppData\Local\Temp\surefire5212061697061421375\surefirebooter5757918049602356952.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.17+8-LTS"/>
@@ -62,8 +62,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="createOrderDifferentColorAndReturnTrack[Создание заказа. Тестовые данные: [Lmodel.Color;@2d6e09f0]" classname="ru.yandex.practickum.CreateOrderTest" time="0.348"/>
-  <testcase name="createOrderDifferentColorAndReturnTrack[Создание заказа. Тестовые данные: [Lmodel.Color;@257da215]" classname="ru.yandex.practickum.CreateOrderTest" time="0.36"/>
-  <testcase name="createOrderDifferentColorAndReturnTrack[Создание заказа. Тестовые данные: [Lmodel.Color;@5aa461]" classname="ru.yandex.practickum.CreateOrderTest" time="0.314"/>
-  <testcase name="createOrderDifferentColorAndReturnTrack[Создание заказа. Тестовые данные: [Lmodel.Color;@f3e6876]" classname="ru.yandex.practickum.CreateOrderTest" time="0.298"/>
+  <testcase name="createOrderDifferentColorAndReturnTrack[Создание заказа. Тестовые данные: [Lmodel.Color;@588614f9]" classname="ru.yandex.practickum.CreateOrderTest" time="0.296"/>
+  <testcase name="createOrderDifferentColorAndReturnTrack[Создание заказа. Тестовые данные: [Lmodel.Color;@16718e1b]" classname="ru.yandex.practickum.CreateOrderTest" time="0.292"/>
+  <testcase name="createOrderDifferentColorAndReturnTrack[Создание заказа. Тестовые данные: [Lmodel.Color;@7fb313e3]" classname="ru.yandex.practickum.CreateOrderTest" time="0.313"/>
+  <testcase name="createOrderDifferentColorAndReturnTrack[Создание заказа. Тестовые данные: [Lmodel.Color;@771ede0d]" classname="ru.yandex.practickum.CreateOrderTest" time="0.326"/>
 </testsuite>

@@ -1,12 +1,12 @@
 package ru.yandex.practickum;
 
+import client.CourierApiClient;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import client.CourierApiClient;
 import model.Courier;
 
 import static org.hamcrest.MatcherAssert.assertThat;

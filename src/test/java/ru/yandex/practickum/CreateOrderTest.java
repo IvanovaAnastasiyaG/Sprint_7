@@ -1,14 +1,12 @@
 package ru.yandex.practickum;
 
+import client.OrderApiClient;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import client.OrderApiClient;
 import model.Color;
 import model.Order;
 

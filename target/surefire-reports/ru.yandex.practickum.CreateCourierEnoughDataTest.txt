@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ru.yandex.practickum.CreateCourierEnoughDataTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.711 s - in ru.yandex.practickum.CreateCourierEnoughDataTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.373 s - in ru.yandex.practickum.CreateCourierEnoughDataTest

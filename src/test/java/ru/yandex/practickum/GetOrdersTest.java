@@ -1,8 +1,8 @@
 package ru.yandex.practickum;
 
+import client.OrderApiClient;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import client.OrderApiClient;
 import model.Order;
 
 import java.util.List;

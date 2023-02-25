@@ -1,9 +1,9 @@
 package ru.yandex.practickum;
 
+import client.CourierApiClient;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.junit.*;
-import client.CourierApiClient;
 import model.Courier;
 import io.qameta.allure.junit4.DisplayName;
 

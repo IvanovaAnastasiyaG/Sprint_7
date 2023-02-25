@@ -1,18 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: ru.yandex.practickum.CreateCourierTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 4.173 s <<< FAILURE! - in ru.yandex.practickum.CreateCourierTest
-createExistCourierRequiredFieldsReturnIsExist[Создание курьера. Тестовые данные: model.Courier@656672fb](ru.yandex.practickum.CreateCourierTest)  Time elapsed: 0.708 s  <<< FAILURE!
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.911 s <<< FAILURE! - in ru.yandex.practickum.CreateCourierTest
+createExistCourierRequiredFieldsReturnIsExist[Создание курьера. Тестовые данные: model.Courier@33845e3d](ru.yandex.practickum.CreateCourierTest)  Time elapsed: 0.775 s  <<< FAILURE!
 java.lang.AssertionError: 
 Message error is login already in use
 Expected: "Этот логин уже используется"
      but: was "Этот логин уже используется. Попробуйте другой."
-	at ru.yandex.practickum.CreateCourierTest.createExistCourierRequiredFieldsReturnIsExist(CreateCourierTest.java:63)
+	at ru.yandex.practickum.CreateCourierTest.createExistCourierRequiredFieldsReturnIsExist(CreateCourierTest.java:62)
 
-createExistCourierRequiredFieldsReturnIsExist[Создание курьера. Тестовые данные: model.Courier@75df4b1d](ru.yandex.practickum.CreateCourierTest)  Time elapsed: 0.642 s  <<< FAILURE!
+createExistCourierRequiredFieldsReturnIsExist[Создание курьера. Тестовые данные: model.Courier@7e615c6a](ru.yandex.practickum.CreateCourierTest)  Time elapsed: 0.636 s  <<< FAILURE!
 java.lang.AssertionError: 
 Message error is login already in use
 Expected: "Этот логин уже используется"
      but: was "Этот логин уже используется. Попробуйте другой."
-	at ru.yandex.practickum.CreateCourierTest.createExistCourierRequiredFieldsReturnIsExist(CreateCourierTest.java:63)
+	at ru.yandex.practickum.CreateCourierTest.createExistCourierRequiredFieldsReturnIsExist(CreateCourierTest.java:62)
 
